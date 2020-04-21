@@ -16,3 +16,17 @@ class Order(models.Model):
         return str(self.pk)
 
 
+class Categories(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return str(self.name)
+
+
+class DishObjects(models.Model):
+    categories = models.ForeignKey(Categories, on_delete=models.CASCADE)
+    name = models.CharField(max_length=30)
+    availability = models.BooleanField()
+
+    def __str__(self):
+        return str(self.name)
