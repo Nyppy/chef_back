@@ -11,16 +11,17 @@ class SmsManager:
         self.phone = phone
 
     def send(self, address, apartment, price, phone, food, index):
-        data = {
-            'number': self.phone,
-            'text': "CHIEF STREET\r\n{}\r\n{}\r\n{}\r\n{}\r\n{} руб.\r\n\r\nID заказа - {}".format(
-                address, apartment, phone, food, price, index
-            ),
-            'sign': "SMS Aero",
-            'channel': 'DIRECT'
-        }
-
-        requests.post(self.URL, json=data)
+        # data = {
+        #     'number': self.phone,
+        #     'text': "CHIEF STREET\r\n{}\r\n{}\r\n{}\r\n{}\r\n{} руб.\r\n\r\nID заказа - {}".format(
+        #         address, apartment, phone, food, price, index
+        #     ),
+        #     'sign': "SMS Aero",
+        #     'channel': 'DIRECT'
+        # }
+        #
+        # requests.post(self.URL, json=data)
+        return ''
 
 
 class Firebase:
