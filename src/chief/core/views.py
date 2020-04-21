@@ -16,7 +16,6 @@ class OrderViewSet(viewsets.ModelViewSet):
 
     def list(self, request, *args, **kwargs):
         """
-
         :param request:
         :param args:
         :param kwargs:
