@@ -24,3 +24,33 @@ class OrderSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         instance = super().create(validated_data)
         return instance
+
+
+class CategoriesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Categories
+
+        fields = (
+            'id', 'name'
+        )
+
+    def create(self, validated_data):
+        instance = super().create(validated_data)
+        return instance
+
+
+class DishSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.DishObjects
+
+        fields = (
+            'id', 'categories', 'name',
+            'availability', 'cal', 'fats', 'carbo',
+            'prot', 'price', 'img'
+        )
+
+    @transaction.atomic()
+    def create(self, validated_data):
+        instance = super().create(validated_data)
+        return instance

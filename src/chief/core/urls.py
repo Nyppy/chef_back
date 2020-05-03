@@ -7,10 +7,13 @@ from . import views
 
 router = DefaultRouter()
 router.register('order', views.OrderViewSet)
+router.register('categories', views.CategoriesViewSet)
+router.register('dish', views.DishViewSet)
 
 
 urlpatterns = [
     url(r'', include(router.urls)),
     path('stop-list/', views.ViewStopList.as_view(), name='stop-list'),
-    path('get-dish/', views.GetDish.as_view(), name='get-dish'),
+    path('get-dish/', views.GetDish.as_view(), name='get-dish'),  # тоже убоать надо будет
+    path('get-categories/', views.Categories.as_view(), name='get-categories'),  # потом уберу
 ]
