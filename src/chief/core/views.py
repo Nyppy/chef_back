@@ -93,7 +93,8 @@ class GetDish(View):
                         'carbo': i.carbo,
                         'prot': i.prot,
                         'price': i.price,
-                        'img': i.img
+                        'img': i.img,
+                        'weight': i.weight
                     }
                 )
 

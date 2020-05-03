@@ -33,6 +33,7 @@ class DishObjects(models.Model):
     prot = models.CharField(max_length=8)  # белки
     price = models.DecimalField(default=0.00, max_digits=8, decimal_places=2)
     img = models.ImageField(upload_to='media')
+    weight = models.CharField(max_length=8)  # г/л/мл строка с весом
 
     def __str__(self):
         return str(self.pk)
